@@ -107,10 +107,10 @@
             function displayAll(data) {
                 $.each(data, function () {
                     $("#allData").append("<li><a rel='external' href='" + this.id + "'>" +
-                            this.bookTitle + ' ' +
-                            this.authorName + ' ' +
-                            this.bookDescription + ' ' +
-                            this.bookPrice + ' ' +
+                            this.title + ' ' +
+                            this.author + ' ' +
+                            this.description + ' ' +
+                            this.price + ' ' +
                             this.isbn + ' ' +
                             this.createDate + "</li>");
                 });
@@ -129,13 +129,13 @@
                 $.ajax({
 			type : "POST",
 			contentType : "application/json",
-			url : "${home}/rest/addBook",
+			url : "${home}rest/addBook",
 			data : JSON.stringify(bookData),
 			dataType : 'json',
 			timeout : 100000,
 			success : function(data) {
 				console.log("SUCCESS: ", data);
-				getAll();
+				//getAll();
 			},
 			error : function(e) {
 				console.log("ERROR: ", e);

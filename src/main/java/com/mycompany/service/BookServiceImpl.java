@@ -7,11 +7,11 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mycompany.dao.BookDao;
+import com.mycompany.mapper.BookMapper;
 import com.mycompany.model.Book;
 /**
  * 
- * @author Hamidul Islam
+ * @author Suman
  *
  */
 @Service
@@ -19,37 +19,24 @@ import com.mycompany.model.Book;
 public class BookServiceImpl implements BookService { 
 
 	@Autowired
-	private BookDao bookDao;
+	private BookMapper bookMapper;
 
 	@Override
 	public Book findById(int bookId) { 
 
-		return bookDao.findById(bookId);
+		return bookMapper.selectBook(bookId);
 	}
 
 	@Override
 	
 	public List<Book> findAllBooks() {
-		return bookDao.findAllBooks();
+		return bookMapper.getAll();
 	}
 
 	@Override
 
 	public void addBook(Book book) {
-		bookDao.addBook(book);
+		bookMapper.insertBook(book);
 
 	}
-
-	@Override
-	public void deleteBook(int bookId) {
-		bookDao.deleteBook(bookId);
-
-	}
-
-	@Override
-	public void updateBook(Book book) {
-		bookDao.updateBook(book);
-		
-	}
-
 }

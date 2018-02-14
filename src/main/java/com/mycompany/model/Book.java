@@ -1,33 +1,15 @@
 package com.mycompany.model;
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity(name="Book")
-@Table(name="book")
-
 public class Book {
 
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    
 	private int id;
-	
-	@Column(name = "title")
-	private String bookTitle;
-	@Column(name = "author")
-	private String authorName;
-	@Column(name = "description")
-	private String bookDescription;
-	@Column(name = "price")
-	private int bookPrice;
-	@Column(name = "isbn")
+	private String title;
+	private String author;
+	private String description;
+	private int price;
 	private int isbn;	
-	@Column(name = "create_date")
 	private Date createDate = new Date();
 
 	public Date getCreateDate() {
@@ -46,36 +28,36 @@ public class Book {
 		this.id = id;
 	}
 
-	public String getBookTitle() {
-		return bookTitle;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setBookTitle(String bookTitle) {
-		this.bookTitle = bookTitle;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public String getAuthorName() {
-		return authorName;
+	public String getAuthor() {
+		return author;
 	}
 
-	public void setAuthorName(String authorName) {
-		this.authorName = authorName;
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 
-	public String getBookDescription() {
-		return bookDescription;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setBookDescription(String bookDescription) {
-		this.bookDescription = bookDescription;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
-	public int getBookPrice() {
-		return bookPrice;
+	public int getPrice() {
+		return price;
 	}
 
-	public void setBookPrice(int bookPrice) {
-		this.bookPrice = bookPrice;
+	public void setPrice(int price) {
+		this.price = price;
 	}
 
 	public int getIsbn() {
@@ -85,5 +67,10 @@ public class Book {
 	public void setIsbn(int isbn) {
 		this.isbn = isbn;
 	}
+
+    @Override
+    public String toString() {
+        return "Book{" + "id=" + id + ", bookTitle=" + title + ", authorName=" + author + ", bookDescription=" + description + ", bookPrice=" + price + ", isbn=" + isbn + ", createDate=" + createDate + '}';
+    }
 
 }

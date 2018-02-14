@@ -14,7 +14,7 @@ import com.mycompany.service.BookService;
 
 /**
  * 
- * @author Hamidul Islam
+ * @author Suman
  *
  */
 
@@ -36,17 +36,17 @@ public class RestController {
 		return "OK";
 	}
 	
-	@RequestMapping(value = "/rest/updateBook", method = RequestMethod.POST)
-	public @ResponseBody String  updateBook(@RequestBody Book book) {
-		System.out.println("#########updateBook()#########");
-		bookService.updateBook(book); 
-		return "OK";
-	}
-	
-	@RequestMapping(value = "/rest/deleteBook", method = RequestMethod.POST)
-	public @ResponseBody String  deleteBook(@RequestBody Book book) {
-		System.out.println("#########deleteBook()#########");
-		bookService.deleteBook(book.getId());
-		return "OK";
-	}
+//	@RequestMapping(value = "/rest/updateBook", method = RequestMethod.POST)
+//	public @ResponseBody String  updateBook(@RequestBody Book book) {
+//		System.out.println("#########updateBook()#########");
+//		bookService.updateBook(book); 
+//		return "OK";
+//	}
+//	
+//	@RequestMapping(value = "/rest/deleteBook", method = RequestMethod.POST)
+//	public @ResponseBody String  deleteBook(@RequestBody Book book) {
+//		System.out.println("#########deleteBook()#########");
+//		bookService.deleteBook(book.getId());
+//		return "OK";
+//	}
 }
